@@ -1,0 +1,13 @@
+Click
+Flask
+flask-marshmallow
+Flask-SQLAlchemy
+itsdangerous
+Jinja2
+MarkupSafe
+marshmallow
+mysqlclient
+python-memcached
+six
+SQLAlchemy
+Werkzeug
