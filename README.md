@@ -25,6 +25,7 @@ Create Docker image from file
 sudo docker build .
 ```
 
+
 Running docker container locally
 
 ```
