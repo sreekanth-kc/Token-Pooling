@@ -3,56 +3,31 @@ Simple Microservice for serving tokens.
 
 ## Installation
 
-Setup virtual environment
+Install [Dcoker](https://www.linode.com/docs/applications/containers/install-docker-ce-ubuntu-1804/)
+
 ```bash
-sudo apt-get install -y python3-pip
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
 
-sudo apt install python3-venv -y  && python3 -m venv venv && . venv/bin/activate
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
+sudo apt-key fingerprint 0EBFCD88
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+sudo apt update
+
+sudo apt install docker-ce
 ```
 
-Install requirments
+Create Docker image from file
 
 ```
-sudo pip3 install -r requirements.txt
+sudo docker build .
 ```
 
-Setup Cache
-```
-sudo apt-get install memcached
-
-memcached -u root &
+Running docker container locally
 
 ```
-Run application
-
-```
-python main.py
-
-```
-
-API details
-
-```
-/post_token
-
-Description:
-    Create a token in Database.
-params:
-    token_name
---------------------------------
-/get_token
-
-Description:
-    Get a token from the Microservice.
-params:
-    None
---------------------------------
-/get_token_status
-
-Description:
-    Get usage status of all tokens.
-params:
-    None
+sudo docker run -it -d -p outport:docker_port hash_id
 
 ```
